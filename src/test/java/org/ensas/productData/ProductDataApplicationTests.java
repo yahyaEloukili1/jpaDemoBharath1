@@ -30,7 +30,7 @@ class ProductDataApplicationTests {
 	@Test
 	public void read() {
 	
-		Product p = productRepository.findById(1).get();
+		Product p = productRepository.findById(1L).get();
 		if(productRepository.existsById(p.getId())) {
 			assertNotNull(p);
 			assertEquals("ordinateur",p.getName());
@@ -40,7 +40,7 @@ class ProductDataApplicationTests {
 	}
 	@Test
 	public void update() {
-		Product p = productRepository.findById(1).get();
+		Product p = productRepository.findById(1L).get();
 		p.setName("laptop");
 		productRepository.save(p);
 		
@@ -48,8 +48,8 @@ class ProductDataApplicationTests {
 	@Test
 	public void delete() {
 	
-		if(productRepository.existsById(1)) {
-			productRepository.deleteById(1);
+		if(productRepository.existsById(1L)) {
+			productRepository.deleteById(1L);
 		}
 	}
 	@Test
